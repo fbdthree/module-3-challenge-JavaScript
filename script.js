@@ -18,7 +18,7 @@ function generatePassword() {
 
   console.log(uppersArray);
 
-  // Generate prompts and assign input to variables
+  // Generate prompts and assign input to variables 
 var passwordLength = window.prompt("How long would you like your password?  Must be between 8 and 128 characters");
 if(passwordLength < 8 || passwordLength > 128) {
   generatePassword();
@@ -48,19 +48,19 @@ if(passwordLength < 8 || passwordLength > 128) {
   }
   console.log(upperCase, lowerCase, specialChars, numbers);
   
-  // generate password
-  // run through every index of the password string with a for loop
-  // 
-  for(var i = password.length; i < passwordLength; i++) {
-    password = password + getRandomElement(characters);
+// generate password
+for(var i = password.length; i < passwordLength; i++) {
+  password = password + getRandomElement(characters);
 }
 return password;
 }
-
 }
+
+// create funtion that passes and array and returns a random element of that array
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
+
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
